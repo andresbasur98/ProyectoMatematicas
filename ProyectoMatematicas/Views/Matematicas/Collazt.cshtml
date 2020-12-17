@@ -1,0 +1,29 @@
+﻿@model List<int>
+
+@{ 
+    List<int> numeroscollatz = ViewData["COLLATZ"] as List<int>;
+}
+
+<h1>Collazt</h1>
+
+<div>
+    <ul>
+        @foreach(int num in Model)
+        {
+            <li>
+                @Html.ActionLink(num.ToString(), "Collazt", "Matematicas", new { numero = num })
+            </li>
+        }
+    </ul>
+</div>
+<div>
+    @if(numeroscollatz != null)
+    {
+        <ul>
+            @foreach(int num in numeroscollatz)
+            {
+                <li>@num</li>
+            }
+        </ul>
+    }
+</div>

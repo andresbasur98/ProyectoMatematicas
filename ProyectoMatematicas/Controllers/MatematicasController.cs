@@ -44,12 +44,41 @@ namespace ProyectoMatematicas.Controllers
             return View();
         }
 
-        public IActionResult Collazt()
+        public IActionResult Collazt(int? numero)
         {
-            return View();
+            // estamos recibiendo el parametro
+            if( numero != null)
+            {
+                List<int> collazt = new List<int>();
+                while( numero != 1)
+                {
+                    if( numero % 2 == 0)
+                    {
+                        numero = numero / 2;
+                    }
+                    else
+                    {
+                        numero = numero * 3 + 1;
+                    }
+                    collazt.Add(numero.Value);
+                }
+                ViewData["COLLATZ"] = collazt;
+            }
+
+            ViewData["NUMERO"] = numero;
+
+            List<int> aleatorios = new List<int>();
+            Random random = new Random();
+            for (int i = 1; i <= 10; i++)
+            {
+                int aleat = random.Next(1, 100);
+                aleatorios.Add(aleat);
+            }
+            return View(aleatorios);
         }
         public IActionResult Index()
         {
+            
             return View();
         }
     }
