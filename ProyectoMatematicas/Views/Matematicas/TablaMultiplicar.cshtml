@@ -1,0 +1,24 @@
+﻿@{ 
+    int multi = 0;
+}
+@model List<int>
+
+<h1>TablaMultiplicar</h1>
+<form method="post">
+    <input type="number" name="numero" />
+
+    <button type="submit">Tabla</button>
+</form>
+@if(!ViewData["NUMERO"].Equals(0))
+{
+
+@foreach(int numero in Model)
+{
+    
+    <h3>@ViewData["NUMERO"] X @multi = @numero </h3>
+    multi++;
+}
+}
+
+
+

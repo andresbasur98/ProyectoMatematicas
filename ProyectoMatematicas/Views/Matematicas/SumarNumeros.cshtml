@@ -1,0 +1,17 @@
+﻿
+<h1>SumarNumeros</h1>
+<form method="post">
+    <label>Numero1</label>
+    <input type="number" name="numero1" />
+
+    <label>Numero 2</label>
+    <input type="number" name="numero2" />
+
+    <button type="submit">Sumar</button>
+</form>
+
+@if (@ViewData["RESLT"] != null)
+{
+<h1>Resultado: @ViewData["RESLT"]</h1>
+}
+
